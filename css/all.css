@@ -1,0 +1,412 @@
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+ margin: 0;
+ padding: 0;
+ border: 0;
+ font-size: 100%;
+ font: inherit;
+ vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+ display: block;
+}
+body {
+ line-height: 1;
+}
+ol, ul {
+ list-style: none;
+}
+blockquote, q {
+ quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+ content: '';
+ content: none;
+}
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+}
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+  
+/* My css Begin*/
+.wrap{
+    max-width: 1002px;
+    margin: 0 auto;
+}
+.iconlink{
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0;
+    background: #f6f6f6;
+}
+.iconlink a{
+    display:flex;
+    justify-content: center;
+    text-decoration: none;
+}
+.iconlink a span{
+    margin-left: 2px;
+}
+.iconlink .divider{
+    margin: 0 4px;
+    color: gray;
+}
+.iconlink .twitterfans{
+    color: #73cdf1;
+}
+
+.nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    display: block;
+    background: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/logo.png) no-repeat left bottom;
+    width: 224px;
+    height: 50px;
+    text-indent: 101%;
+    overflow: hidden; 
+    white-space: nowrap;     
+}
+
+.barnav{
+    display:flex;
+}
+/* 20210224 */
+.showmenu{
+    display: none;
+}
+.showmenu a{
+    display: block;    
+    color: #11cfa0;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-bottom: 3px solid transparent;
+}
+
+.showmenu a:hover,.showmenu a.active{
+    border-bottom:3px solid #11cfa0;  
+}
+/* 20210224 */
+.barnav li {
+    position: relative;
+    text-align: center;
+    height: 49px;
+    transition: height 3s;
+}
+
+.barnav > li > a{
+    display: block;    
+    color: #11cfa0;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-bottom: 3px solid transparent;
+}
+
+.barnav > li > a:hover,.barnav > li > a.active{
+    border-bottom:3px solid #11cfa0;  
+}
+
+/* 20210222 Menu 下拉 bar */
+.barnav li .branch{
+    display: block;
+    position: absolute; 
+    z-index: 1;
+    width: 100%;
+    top: 49px;
+    left: 0;
+    height: 0;
+    transition: height 3s;
+    padding-left: 15px;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+.barnav li .branch li{
+    background: white;
+
+}
+
+.barnav li .branch li a{
+    display: block;    
+    color: #11cfa0;
+    text-decoration: none;
+    padding: 15px 15px;
+    transition: ease 0.33s;
+}
+
+
+.barnav li .branch li a:hover{
+    background: #69CA62;
+    color: #fff;
+}
+/* Menu 下拉 bar */
+
+/* 20210224 */
+@media (max-width:767px) and (min-width:360px){
+    .nav{
+        position: relative;
+    }
+
+    .barnav{
+        display:block;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        overflow: hidden;
+        height: 0;
+        transition: height 3s;
+        /* 如果直接由 none->block，不會有動畫效果 */
+        /* 所以要用高度來做到變化 */
+    }
+
+    .barnav li{
+        text-align: left;
+        background: white;        
+        /* opacity: 0.9; */
+        /* height: 0; */
+        transition: all 3s;
+    }
+    
+    /* 20210225 開始做子項次的展開行為?*/
+    .barnav li > .branch{
+        padding-left: 15px;
+        z-index: 3;
+    }
+
+    .showmenu{
+    display: block;
+    }
+}
+
+.menuopen{    
+    height: 147px;
+}
+.barnavopen{    
+    height: calc(147px + 46px * 5);
+}
+.barnav .baritemopen{    
+    height: calc(49px + 46px * 5);
+}
+.barnav li .branchopen{    
+    height: calc(49px + 46px * 5);
+}
+/* 20210224 */
+
+.banner{
+    position: relative;
+}
+
+.bannerdescript{
+    position: absolute;
+    width: 100%;
+    top: 129px;
+    left: 0px;    
+    padding: 15px 0;
+    background:rgba(0,0,0,0.6);
+}
+
+.bannerdescript span{
+    margin-left: 5px;
+    font-size: 30px;
+    color: white;
+}
+
+.classsection{
+    margin-top: 50px;
+}
+.classsection ul{
+    display:flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.classsection ul li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #f1f1f1;
+    width: 30%;    
+    box-shadow: 0 3px 2px #e4e4e4;
+}
+
+.classsection ul li:hover{    
+    box-shadow: 10px 10px 1px #e4e4e4;
+    cursor: pointer;
+}
+
+.classsection ul li .classphoto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 55%;
+}
+
+.classsection ul li .classphoto img{
+    padding: 30px 0;
+}
+
+.classsection ul li .body{
+    text-align:center;
+    width: 100%;
+}
+
+.classsection ul li .body p{
+    text-align:left;
+    line-height: 23px;
+    padding:0 15px
+}
+
+.classsection ul li .body h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.classContent{
+    margin-top: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+ }
+
+.content{
+    margin: 30px auto;
+    border-collapse: collapse; 
+    border-spacing: 0px;
+ }
+
+ .content th{
+     background-color: #f7f7f7;
+ }
+ 
+ .content th, td{
+    border-top: 1px solid #f7f7f7;
+    border-bottom: 1px solid #f7f7f7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    padding-left: 20px;
+    text-align: left;
+}
+
+.content .mark{
+    color: #00a67d;
+}
+
+.formsection{
+    width: 100%;
+    background: linear-gradient(#00644b,#009771);
+}
+
+.formsection .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formsection .title p{
+    display: block;
+    color: #ffffff;
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 1px;
+}
+.formsection .title .top{
+    margin-top: 20px;
+}
+
+.userinfo{
+    margin-top: 20px;
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+#remark{
+    border-radius: 8px 8px 8px 8px;
+}
+
+.userinfo .basedata{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.userinfo label{
+    align-self: flex-start;
+    margin-top: 7px;
+    margin-bottom: 3px;
+    color: white;
+}
+
+.userinfo input{
+    border-radius: 4px 4px 4px 4px;
+    font-size: 15px;
+    padding:5px 0;
+}
+
+.userinfo .sumbit{
+    align-self: flex-end;
+    border-radius:4px 4px 4px 4px;
+    padding:4px 10px;
+    background:#00cc99;
+    color:white;
+    margin-top: 5px;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.footer .sublogo{
+    display: block;
+    background: url(https://raw.githubusercontent.com/hexschool/HTMLHWSource/master/singlePage/footerLogo.png) no-repeat left bottom;
+    width: 171px;
+    height: 36px;
+    text-indent: 101%;
+    overflow: hidden; 
+    white-space: nowrap;     
+}
+
+.footer p{
+    padding-top: 3px;
+    padding-bottom: 3px;  
+}
+
+.footer span{
+    color: red;
+}
