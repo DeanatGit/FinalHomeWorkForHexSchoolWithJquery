@@ -83,6 +83,7 @@ img{
     display:flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo{
@@ -99,10 +100,16 @@ img{
     display:flex;
 }
 /* 20210224 */
-.showmenu{
+.menu-btn{
     display: none;
+    padding-right: 8px;
+    margin-top: -0.50em;
+    line-height: 1.2;
+    font-size: 18px;
+    font-weight: 200;
+    vertical-align: middle;
 }
-.showmenu a{
+.menu-btn a{
     display: block;    
     color: #11cfa0;
     text-decoration: none;
@@ -110,15 +117,25 @@ img{
     border-bottom: 3px solid transparent;
 }
 
-.showmenu a:hover,.showmenu a.active{
+.menu-btn a:hover,.menu-btn a.active{
     border-bottom:3px solid #11cfa0;  
 }
-/* 20210224 */
+
+.menu-btn span {
+    display: block;
+    width: 19px;
+    height: 3px;
+    margin: 4px 0;
+    background: rgb(0, 0, 0);
+    z-index: 99;
+}
+
+/* 20210224 Menu 下拉 bar*/
 .barnav li {
     position: relative;
     text-align: center;
-    height: 49px;
-    transition: height 3s;
+    /* height: 49px;
+    transition: height 3s; */
 }
 
 .barnav > li > a{
@@ -135,15 +152,15 @@ img{
 
 /* 20210222 Menu 下拉 bar */
 .barnav li .branch{
-    display: block;
+    display: none;
     position: absolute; 
     z-index: 1;
     width: 100%;
     top: 49px;
     left: 0;
-    height: 0;
-    transition: height 3s;
-    padding-left: 15px;
+    /* height: 0; */
+    /* transition: height 3s; */
+    /* padding-left: 15px; */
     overflow: hidden;
     /* border: 1px solid red; */
 }
@@ -168,46 +185,89 @@ img{
 }
 /* Menu 下拉 bar */
 
+/* mobiel */
+.nav .responsive-menu{
+    /* display: none; */
+    position: absolute;
+    z-index: 2;
+    top:50px;
+    left: 0;
+    width: 100%;
+}
+
+/* 0311發現放大縮小還是沒辦法即時偵測到? 
+有 API可呼叫，需搭配 setTimeOut，才不會有 performance的問題
+*/
+.nav .responsive-menu .menu{
+    position: relative;
+    display: none;
+}
+
+.nav .responsive-menu > li > a{
+    display: block;    
+    color: #11cfa0;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-bottom: 3px solid transparent;
+}
+
+.nav .responsive-menu > li > a:hover,.nav .responsive-menu > li > a.active{
+    border-bottom:3px solid #11cfa0;  
+}
+
+/* mobiel 下拉*/
+/* .nav .responsive-menu .menu-item{
+    position: relative;
+}
+
+.nav .responsive-menu .menu-item .sub-menu{
+    position: absolute;
+    z-index: 2;
+    top:46px;
+    left: 0;
+    width: 100%;
+    display: none;
+} */
+.nav .responsive-menu .menu-item .sub-menu{
+    display: none;
+}
+
+.nav .responsive-menu .menu-item{
+    background: white;
+
+}
+
+.nav .responsive-menu li a{
+    display: block;    
+    color: #11cfa0;
+    text-decoration: none;
+    padding: 15px 15px;
+    transition: ease 0.33s;
+}
+
+
+.nav .responsive-menu li a:hover{
+    background: #69CA62;
+    color: #fff;
+}
+/* mobiel */
+
 /* 20210224 */
 @media (max-width:767px) and (min-width:360px){
-    .nav{
+    /* .nav{
         position: relative;
-    }
+    } */
 
     .barnav{
-        display:block;
-        position: absolute;
-        top: 50px;
-        left: 0;
-        z-index: 2;
-        width: 100%;
-        overflow: hidden;
-        height: 0;
-        transition: height 3s;
-        /* 如果直接由 none->block，不會有動畫效果 */
-        /* 所以要用高度來做到變化 */
+        display:none;
     }
 
-    .barnav li{
-        text-align: left;
-        background: white;        
-        /* opacity: 0.9; */
-        /* height: 0; */
-        transition: all 3s;
-    }
-    
-    /* 20210225 開始做子項次的展開行為?*/
-    .barnav li > .branch{
-        padding-left: 15px;
-        z-index: 3;
-    }
-
-    .showmenu{
+    .menu-btn{
     display: block;
     }
 }
 
-.menuopen{    
+/* .menuopen{    
     height: 147px;
 }
 .barnavopen{    
@@ -218,7 +278,7 @@ img{
 }
 .barnav li .branchopen{    
     height: calc(49px + 46px * 5);
-}
+} */
 /* 20210224 */
 
 .banner{
