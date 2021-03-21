@@ -54,7 +54,7 @@ img{
   
 /* My css Begin*/
 .wrap{
-    max-width: 1002px;
+    width: 902px;
     margin: 0 auto;
 }
 .iconlink{
@@ -79,6 +79,14 @@ img{
     color: #73cdf1;
 }
 
+.header{
+    position: fixed;
+    z-index: 1;
+    width: 902px;
+    max-width: 100%;
+    background: white;
+}
+
 .nav{
     display:flex;
     justify-content: space-between;
@@ -99,6 +107,7 @@ img{
 .barnav{
     display:flex;
 }
+
 /* 20210224 */
 .menu-btn{
     display: none;
@@ -134,8 +143,6 @@ img{
 .barnav li {
     position: relative;
     text-align: center;
-    /* height: 49px;
-    transition: height 3s; */
 }
 
 .barnav > li > a{
@@ -150,7 +157,6 @@ img{
     border-bottom:3px solid #11cfa0;  
 }
 
-/* 20210222 Menu 下拉 bar */
 .barnav li .branch{
     display: none;
     position: absolute; 
@@ -158,11 +164,7 @@ img{
     width: 100%;
     top: 49px;
     left: 0;
-    /* height: 0; */
-    /* transition: height 3s; */
-    /* padding-left: 15px; */
     overflow: hidden;
-    /* border: 1px solid red; */
 }
 
 .barnav li .branch li{
@@ -195,9 +197,6 @@ img{
     width: 100%;
 }
 
-/* 0311發現放大縮小還是沒辦法即時偵測到? 
-有 API可呼叫，需搭配 setTimeOut，才不會有 performance的問題
-*/
 .nav .responsive-menu .menu{
     position: relative;
     display: none;
@@ -215,19 +214,6 @@ img{
     border-bottom:3px solid #11cfa0;  
 }
 
-/* mobiel 下拉*/
-/* .nav .responsive-menu .menu-item{
-    position: relative;
-}
-
-.nav .responsive-menu .menu-item .sub-menu{
-    position: absolute;
-    z-index: 2;
-    top:46px;
-    left: 0;
-    width: 100%;
-    display: none;
-} */
 .nav .responsive-menu .menu-item .sub-menu{
     display: none;
 }
@@ -252,12 +238,7 @@ img{
 }
 /* mobiel */
 
-/* 20210224 */
 @media (max-width:767px) and (min-width:360px){
-    /* .nav{
-        position: relative;
-    } */
-
     .barnav{
         display:none;
     }
@@ -266,20 +247,6 @@ img{
     display: block;
     }
 }
-
-/* .menuopen{    
-    height: 147px;
-}
-.barnavopen{    
-    height: calc(147px + 46px * 5);
-}
-.barnav .baritemopen{    
-    height: calc(49px + 46px * 5);
-}
-.barnav li .branchopen{    
-    height: calc(49px + 46px * 5);
-} */
-/* 20210224 */
 
 .banner{
     position: relative;
@@ -359,7 +326,8 @@ img{
  }
 
 .content{
-    margin: 30px auto;
+    margin: 0 auto;
+    padding-top: 76px;
     border-collapse: collapse; 
     border-spacing: 0px;
  }
