@@ -84,7 +84,7 @@ img{
     z-index: 1;
     width: 902px;
     max-width: 100%;
-    background: white;
+    background: black;
 }
 
 .nav{
@@ -135,7 +135,7 @@ img{
     width: 19px;
     height: 3px;
     margin: 4px 0;
-    background: rgb(0, 0, 0);
+    background: #11cfa0;
     z-index: 99;
 }
 
@@ -438,3 +438,31 @@ img{
 .footer span{
     color: red;
 }
+
+.back-to-top {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    padding: 10px;
+    z-index: 3;
+    border-radius: 10px;
+    background-color: gray;
+    transition: 0.3s;
+  }
+  
+  .back-to-top:hover {
+      background-color: black;
+    }
+    
+  .back-to-top { 
+    /* // if JS is enabled, hide back to top */
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+.icon {
+    display: block;
+    color: white;
+    width: 1.25em;
+    height: 1.25em;
+  }
