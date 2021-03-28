@@ -51,6 +51,14 @@ img{
     max-width: 100%;
     height: auto;
 }
+/* .swiper-wrapper img{
+    max-width: 1002px;
+    max-height: 346px;
+}
+.swiper-wrapper .swiper-slide{
+    display: flex;
+    justify-content: space-between;
+} */
   
 /* My css Begin*/
 .wrap{
@@ -81,7 +89,7 @@ img{
 
 .header{
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     width: 902px;
     max-width: 100%;
     background: black;
@@ -136,7 +144,7 @@ img{
     height: 3px;
     margin: 4px 0;
     background: #11cfa0;
-    z-index: 99;
+    z-index: 3;
 }
 
 /* 20210224 Menu 下拉 bar*/
@@ -160,7 +168,7 @@ img{
 .barnav li .branch{
     display: none;
     position: absolute; 
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     top: 49px;
     left: 0;
@@ -191,7 +199,7 @@ img{
 .nav .responsive-menu{
     /* display: none; */
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     top:50px;
     left: 0;
     width: 100%;
@@ -265,6 +273,26 @@ img{
     margin-left: 5px;
     font-size: 30px;
     color: white;
+}
+
+.slide-photo1{
+    width: 902px;
+    height: 314px;
+    background: center url('../img/hannah-busing-Zyx1bK9mqmA-unsplash-scaled.jpg') no-repeat;
+}
+
+.slide-photo2{
+    width: 902px;
+    height: 314px;
+    background: -1090px -430px url('../img/you-x-ventures-Oalh2MojUuk-unsplash1-scaled.jpg') no-repeat;
+}
+
+.swiper-container .swiper-button-green{
+    color: #11cfa0;
+}
+
+.swiper-container .swiper-pagination-bullet-active{
+    background-color: #11cfa0;
 }
 
 .classsection{
