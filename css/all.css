@@ -51,14 +51,6 @@ img{
     max-width: 100%;
     height: auto;
 }
-/* .swiper-wrapper img{
-    max-width: 1002px;
-    max-height: 346px;
-}
-.swiper-wrapper .swiper-slide{
-    display: flex;
-    justify-content: space-between;
-} */
   
 /* My css Begin*/
 .wrap{
@@ -116,7 +108,7 @@ img{
     display:flex;
 }
 
-/* 20210224 */
+/* Hamburger Menu */
 .menu-btn{
     display: none;
     padding-right: 8px;
@@ -147,7 +139,7 @@ img{
     z-index: 3;
 }
 
-/* 20210224 Menu 下拉 bar*/
+/* Menu 下拉 bar*/
 .barnav li {
     position: relative;
     text-align: center;
@@ -188,16 +180,14 @@ img{
     transition: ease 0.33s;
 }
 
-
 .barnav li .branch li a:hover{
     background: #69CA62;
     color: #fff;
 }
 /* Menu 下拉 bar */
 
-/* mobiel */
+/* mobiel 下拉 bar */
 .nav .responsive-menu{
-    /* display: none; */
     position: absolute;
     z-index: 3;
     top:50px;
@@ -244,7 +234,7 @@ img{
     background: #69CA62;
     color: #fff;
 }
-/* mobiel */
+/* mobiel 下拉bar */
 
 @media (max-width:767px) and (min-width:360px){
     .barnav{
@@ -275,6 +265,7 @@ img{
     color: white;
 }
 
+/* Swiper */
 .slide-photo1{
     width: 902px;
     height: 314px;
@@ -287,8 +278,17 @@ img{
     background: -1090px -430px url('../img/you-x-ventures-Oalh2MojUuk-unsplash1-scaled.jpg') no-repeat;
 }
 
+.swiper-container:hover .swiper-button-green,.swiper-container:hover .swiper-pagination-bullet{
+    display: inline-block;
+}
+
 .swiper-container .swiper-button-green{
     color: #11cfa0;
+    display: none;
+}
+
+.swiper-container .swiper-pagination-bullet{
+    display: none;
 }
 
 .swiper-container .swiper-pagination-bullet-active{
@@ -325,7 +325,7 @@ img{
     height: 55%;
 }
 
-.classsection ul li .classphoto img{
+.classsection ul li .classphoto a{
     padding: 30px 0;
 }
 

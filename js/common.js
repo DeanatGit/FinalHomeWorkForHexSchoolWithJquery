@@ -1,3 +1,4 @@
+//smartresize function
 (function($,sr){
     var debounce = function (func, threshold, execAsap) {
         var timeout;
@@ -19,6 +20,6 @@
         };
     }
   
-    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+    $.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
   
   })(jQuery,'smartresize');

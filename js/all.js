@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //下拉bar
     $('.barnav .baritem > a').click(function (event) {
         event.preventDefault();
         $(this).toggleClass('active');
@@ -7,6 +8,7 @@ $(document).ready(function () {
         $(this).parent().siblings().find('a').removeClass('active');
     });
 
+    //RWD下拉bar
     $('.nav .responsive-menu .menu .menu-item > a').click(function (event) {
         event.preventDefault();
         $(this).toggleClass('active');
@@ -17,11 +19,13 @@ $(document).ready(function () {
         $(this).parent().siblings().find('a').removeClass('active');
     });
 
+    //Hamburger Menu
     $('.nav .menu-btn').on('click', function (event) {
         event.preventDefault();
         $('.responsive-menu .menu').slideToggle(1000);
     });
 
+    //viewport resize and RWD Menu bar hide
     $(window).smartresize(function () {
         if (window.innerWidth > 767) {
             $('.responsive-menu .menu').slideUp(0);
@@ -29,6 +33,7 @@ $(document).ready(function () {
         }
     });
 
+    //foucus active & backToTop
     var backToTop = $('.back-to-top').data('offset');
     var topFlag = false;
     $(window).scroll(function () {
@@ -65,28 +70,26 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: 0 }, 700);
     })
 
+    //Swiper
     const swiper = new Swiper('.swiper-container', {
-        // Optional parameters
         direction: 'horizontal',
         loop: true,
-
-        // If we need pagination
         pagination: {
             el: '.swiper-pagination',
         },
-
-        // Navigation arrows
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
         },
-
-        // And if we need scrollbar
         scrollbar: {
             el: '.swiper-scrollbar',
-        },
-        // autoplay: {
-        //     delay: 5000,
-        //   },
+        }
     });
+
+    //Light Box
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'showImageNumberLabel':false
+      })
 })
